@@ -8,12 +8,11 @@ const {connection} = require("./db")
  const {auth} = require("./Middleware/auth")
  const cors= require("cors")
 const app = express()
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 app.use("/users",userroute)
 app.use(auth)
 app.use("/notes",notesroute)
-
 
 app.listen(4300,async()=>{
  

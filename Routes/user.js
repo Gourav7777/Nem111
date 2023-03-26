@@ -30,7 +30,7 @@ userroute.post("/login",async(req,res)=>{
             
               if(result){
 
-                 res.send({"msg":"user found login successfull","token":jwt.sign({ "userID": user._id }, 'bruce',{ expiresIn: 60*60 })})
+                 res.send({"msg":"user found login successfull","token":jwt.sign({ "userID": user._id }, 'bruce')})
               }
               else{
                res.send({"msg":"login unsuccessful"}) 

@@ -26,7 +26,9 @@ const {NoteModel}  = require("../Model/notesmodel")
 
   notesroute.post("/add",async(req,res)=>{
 
+     
     const payload = req.body
+    console.log(req.headers.authorization)
     const note = await new NoteModel(payload)
     note.save()
     res.status(200).send({"msg":"new note has been added"})
